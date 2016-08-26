@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="myInit" default-destroy-method="myDestroy">
+        
+        
+        <bean id="triangle" class="test.Triangle" autowire="byName" >
+        
+        	<!-- <property name="type" value="eşkenar"></property> -->
+
+			<!-- <constructor-arg value="ikizkenar"/>
+			<constructor-arg value="35" />	
+				      -->
+			
+			<!-- <constructor-arg value="35" type="int" /> -->
+			
+			<!-- <constructor-arg value="150" type="String" />	 -->
+			
+			<!-- <constructor-arg index="1" value="35" />		
+			<constructor-arg index="0" value="dikaçılı"/>	 -->	
+			
+			
+			
+			
+				   
+        </bean>
+        
+        
+        <bean id="pointA" class="test.Point">
+        
+        <property name="x" value="${pointA.x}"></property>
+        <property name="y" value="${pointA.y}"></property>
+        
+        
+        </bean>
+        
+         <bean id="pointB" class="test.Point">
+        
+        <property name="x" value="-20"></property>
+        <property name="y" value="0"></property>
+        
+        
+        </bean>
+        
+         <bean id="pointC" class="test.Point">
+        
+        <property name="x" value="20"></property>
+        <property name="y" value="0"></property>
+        
+        
+        </bean>
+        
+        <bean class="test.DisplayBeanNameBeanPostProcessor" />
+       <!--  <bean class="test.DisplayBeanFactoryPostProcessor"/> -->
+       
+       <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       
+       	<property name="locations" value="points.properties"></property>
+       
+       </bean>
+        
+              
+        
+        
+</beans>
